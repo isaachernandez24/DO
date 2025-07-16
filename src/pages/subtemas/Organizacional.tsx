@@ -1,11 +1,22 @@
 import React from "react";
-import { Card, CardContent } from "../componentes/ui/card";
+import { Card, CardContent } from "../../componentes/ui/card";
 
 export default function Organizacional() {
   return (
     <Card className="contenido-principal">
       <CardContent className="p-6 space-y-6">
-        <h2 className="text-2xl font-bold text-blue-700">Cambio Organizacional</h2>
+        <h2 className="text-2xl font-bold text-blue-700 text-center">
+          Cambio Organizacional
+        </h2>
+
+        {/* Imagen al inicio */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="/imagenes/cambio1.jpg"
+            alt="Transformación organizacional"
+            className="img-uniforme"
+          />
+        </div>
 
         <div className="text-gray-700 space-y-4 leading-relaxed">
           <p>
@@ -19,6 +30,15 @@ export default function Organizacional() {
             <li><strong>Cambio planificado:</strong> Responde a un diagnóstico previo y se ejecuta con una estrategia clara.</li>
             <li><strong>Cambio no planificado:</strong> Reacción rápida ante imprevistos, crisis o presiones externas.</li>
           </ul>
+
+          {/* Imagen a mitad */}
+          <div className="flex justify-center my-6">
+            <img
+              src="/imagenes/cambio2.jpg"
+              alt="Gestión del cambio en equipos"
+              className="img-uniforme"
+            />
+          </div>
 
           <h3 className="text-xl font-semibold text-blue-600">Factores que impulsan el cambio</h3>
           <p>
@@ -44,18 +64,20 @@ export default function Organizacional() {
           </p>
         </div>
 
-        {/* Imágenes opcionales */}
-        <div className="flex flex-wrap gap-4 justify-center pt-6">
-          <img
-            src="/imagenes/cambio1.jpg"
-            alt="Transformación organizacional"
-            className="img-uniforme"
-          />
-          <img
-            src="/imagenes/cambio2.jpg"
-            alt="Gestión del cambio en equipos"
-            className="img-uniforme"
-          />
+        {/* Caso de estudio */}
+        <div className="mt-8 bg-blue-50 p-4 rounded-lg border border-blue-200 shadow-sm">
+          <h3 className="text-xl font-semibold text-blue-800 mb-2">
+            🧠 Caso de Estudio: Superando la Resistencia al Cambio
+          </h3>
+          <p className="text-gray-800">
+            Una empresa manufacturera implementó un cambio tecnológico significativo que impactó los procesos de producción. Muchos empleados mostraron resistencia, preocupados por su estabilidad laboral y adaptación a las nuevas tecnologías. El equipo directivo desarrolló un plan de comunicación abierta y capacitaciones constantes, involucrando a los empleados en la transición.
+          </p>
+
+          <ul className="list-disc pl-6 mt-3 text-gray-700">
+            <li>¿Qué estrategias se utilizaron para reducir la resistencia al cambio?</li>
+            <li>¿Cómo influyó la comunicación en el éxito del cambio?</li>
+            <li>¿Qué papel jugaron las capacitaciones en la adaptación del personal?</li>
+          </ul>
         </div>
       </CardContent>
     </Card>

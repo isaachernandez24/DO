@@ -1,13 +1,22 @@
 import React from "react";
-import { Card, CardContent } from "../componentes/ui/card";
+import { Card, CardContent } from "../../componentes/ui/card";
 
 export default function Diagnostico() {
   return (
     <Card className="contenido-principal">
       <CardContent className="p-6 space-y-6">
-        <h2 className="text-2xl font-bold text-blue-700">
+        <h2 className="text-2xl font-bold text-blue-700 text-center">
           Diagnóstico, Investigación e Intervención para Medir la Salud Organizacional
         </h2>
+
+        {/* Imagen al inicio */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="/imagenes/diagnostico1.jpg"
+            alt="Reunión de diagnóstico organizacional"
+            className="img-uniforme"
+          />
+        </div>
 
         <div className="text-gray-700 space-y-4 leading-relaxed">
           <p>
@@ -26,6 +35,15 @@ export default function Diagnostico() {
             <li><strong>Diseño de la intervención:</strong> En base al diagnóstico, se proponen estrategias para resolver problemas y potenciar áreas clave.</li>
           </ul>
 
+          {/* Imagen a mitad */}
+          <div className="flex justify-center my-6">
+            <img
+              src="/imagenes/diagnostico2.png"
+              alt="Equipo aplicando intervención"
+              className="img-uniforme"
+            />
+          </div>
+
           <h3 className="text-xl font-semibold text-blue-600">Investigación Organizacional</h3>
           <p>
             Implica el uso de métodos cuantitativos y cualitativos para profundizar en las causas de los problemas detectados. La investigación permite validar hipótesis, obtener una visión objetiva del funcionamiento organizacional y sustentar decisiones estratégicas con datos confiables.
@@ -41,18 +59,20 @@ export default function Diagnostico() {
           </p>
         </div>
 
-        {/* Espacio para imágenes */}
-        <div className="flex flex-wrap gap-4 justify-center pt-6">
-          <img
-            src="/imagenes/diagnostico1.jpg"
-            alt="Reunión de diagnóstico organizacional"
-            className="img-uniforme"
-          />
-          <img
-            src="/imagenes/diagnostico2.png"
-            alt="Equipo aplicando intervención"
-            className="img-uniforme"
-          />
+        {/* Caso de estudio */}
+        <div className="mt-8 bg-blue-50 p-4 rounded-lg border border-blue-200 shadow-sm">
+          <h3 className="text-xl font-semibold text-blue-800 mb-2">
+            🧩 Caso de Estudio: Diagnóstico para Mejorar el Clima Laboral
+          </h3>
+          <p className="text-gray-800">
+            Una empresa tecnológica detectó una disminución en la productividad y un aumento en la rotación de personal. Se decidió aplicar un diagnóstico organizacional usando encuestas de clima laboral, entrevistas con empleados y análisis de procesos. Se identificaron problemas de comunicación y falta de reconocimiento.
+          </p>
+
+          <ul className="list-disc pl-6 mt-3 text-gray-700">
+            <li>¿Qué técnicas de diagnóstico se usaron y por qué?</li>
+            <li>¿Cómo se puede involucrar a los empleados en la fase de retroalimentación?</li>
+            <li>¿Qué tipo de intervenciones podrían mejorar el clima laboral?</li>
+          </ul>
         </div>
       </CardContent>
     </Card>

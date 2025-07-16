@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent } from "../componentes/ui/card";
+import { Card, CardContent } from "../../componentes/ui/card";
 
 export default function Inicio() {
   return (

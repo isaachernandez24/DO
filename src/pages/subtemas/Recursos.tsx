@@ -1,10 +1,10 @@
 import React from "react";
-import { Card, CardContent } from "../componentes/ui/card";
+import { Card, CardContent } from "../../componentes/ui/card";
 
 export default function Recursos() {
   return (
     <Card>
-      <CardContent className="p-4 space-y-4">
+      <CardContent className="contenido-principal">
         <h2 className="text-xl font-semibold">Recursos y Contacto</h2>
         <p><strong>Referencias recomendadas:</strong></p>
         <ul className="list-disc pl-5">

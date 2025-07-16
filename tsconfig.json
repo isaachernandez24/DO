@@ -2,7 +2,8 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "jsx": "react",
-    "baseUrl": ".",              // permite rutas relativas desde el proyecto raíz
+    "baseUrl": ".", 
+    "lib": ["dom", "es2015", "dom.iterable", "esnext"],             // permite rutas relativas desde el proyecto raíz
     "paths": {
       "@/*": ["DO/src/*"]           // alias "@" apuntando a la carpeta src
     },

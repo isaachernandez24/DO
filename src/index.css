@@ -1,10 +1,10 @@
 .img-uniforme {
   width: 500px;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 10px 180px; /* separación horizontal entre imágenes */
+  margin: 10px 700px; /* separación horizontal entre imágenes */
 }
 /* Contenedor principal para mejorar legibilidad */
 .contenido-principal {
