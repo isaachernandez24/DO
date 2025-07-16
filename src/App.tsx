@@ -13,34 +13,40 @@ import Evaluacion from "./pages/subtemas/Evaluacion";
 import Metodologia from "./pages/subtemas/Metodologia";
 import Recursos from "./pages/subtemas/Recursos";
 
+import {
+  FaHome,
+  FaBookOpen,
+  FaToolbox,
+  FaCogs,
+  FaClipboardList,
+  FaLightbulb,
+  FaCogs as FaCogsSmall,
+} from "react-icons/fa";
+
 function App() {
-  // Núcleos temáticos dentro de Contenido
   const contenidoTabs = [
-    { value: "intro", label: "Introducción", component: <Introduccion /> },
-    { value: "cambio", label: "Cambio Organizacional", component: <Organizacional /> },
-    { value: "fases", label: "Fases", component: <Fases /> },
-    { value: "historia", label: "Historia", component: <Historia /> },
-    { value: "enfoques", label: "Enfoques", component: <Enfoques /> },
-    { value: "estrategias", label: "Estrategias", component: <Estrategias /> },
-    { value: "diagnostico", label: "Diagnóstico", component: <Diagnostico /> },
-    { value: "consultor", label: "Consultor", component: <Consultor /> },
+    { value: "intro", label: "Introducción", icon: <FaLightbulb />, component: <Introduccion /> },
+    { value: "cambio", label: "Cambio Organizacional", icon: <FaCogsSmall />, component: <Organizacional /> },
+    { value: "fases", label: "Fases", icon: <FaCogsSmall />, component: <Fases /> },
+    { value: "historia", label: "Historia", icon: <FaCogsSmall />, component: <Historia /> },
+    { value: "enfoques", label: "Enfoques", icon: <FaCogsSmall />, component: <Enfoques /> },
+    { value: "estrategias", label: "Estrategias", icon: <FaCogsSmall />, component: <Estrategias /> },
+    { value: "diagnostico", label: "Diagnóstico", icon: <FaCogsSmall />, component: <Diagnostico /> },
+    { value: "consultor", label: "Consultor", icon: <FaCogsSmall />, component: <Consultor /> },
   ];
 
-  // Menú principal, ya con Recursos y Metodología afuera
   const mainTabs = [
-    { value: "inicio", label: "Inicio" },
-    { value: "contenido", label: "Contenido" },
-    { value: "evaluacion", label: "Evaluación" },
-    { value: "metodologia", label: "Metodología" },
-    { value: "recursos", label: "Recursos" },
+    { value: "inicio", label: "Inicio", icon: <FaHome /> },
+    { value: "contenido", label: "Contenido", icon: <FaBookOpen /> },
+    { value: "evaluacion", label: "Evaluación", icon: <FaToolbox /> },
+    { value: "metodologia", label: "Metodología", icon: <FaCogs /> },
+    { value: "recursos", label: "Recursos", icon: <FaClipboardList /> },
   ];
 
-  // Estados para pestaña principal y sub-pestaña contenido
   const [activeMainTab, setActiveMainTab] = useState("inicio");
   const [activeContenidoTab, setActiveContenidoTab] = useState("intro");
   const [showSidebar, setShowSidebar] = useState(false);
 
-  // Decide qué componente mostrar según selección
   const renderContent = () => {
     if (activeMainTab === "inicio") return <Inicio />;
     if (activeMainTab === "evaluacion") return <Evaluacion />;
@@ -76,9 +82,9 @@ function App() {
           tabIndex={-1}
           id="sidebarOffcanvas"
           aria-labelledby="sidebarOffcanvasLabel"
-          style={{ visibility: showSidebar ? "visible" : "hidden" }}
+          style={{ visibility: showSidebar ? "visible" : "hidden", backgroundColor: "#e0f0ff", width: "280px", borderRight: "1px solid #c0d4f7" }}
         >
-          <div className="offcanvas-header">
+          <div className="offcanvas-header" style={{ borderBottom: "1px solid #c0d4f7", paddingBottom: "0.5rem" }}>
             <h5 className="offcanvas-title" id="sidebarOffcanvasLabel">
               Navegación
             </h5>
@@ -90,39 +96,53 @@ function App() {
             />
           </div>
           <div className="offcanvas-body p-0">
-            <ul className="nav nav-pills flex-column">
+            <ul className="nav nav-pills flex-column p-2" style={{ gap: "10px" }}>
               {mainTabs.map((tab) => (
                 <li className="nav-item" key={tab.value}>
                   <button
-                    className={`nav-link text-start ${
-                      activeMainTab === tab.value ? "active" : ""
-                    }`}
+                    className={`nav-link d-flex align-items-center gap-2 text-start ${activeMainTab === tab.value ? "active" : ""}`}
                     onClick={() => {
                       setActiveMainTab(tab.value);
                       setShowSidebar(false);
-                      // Reinicia sub-tab contenido solo si vas a contenido
                       if (tab.value === "contenido" && !activeContenidoTab) {
                         setActiveContenidoTab("intro");
                       }
                     }}
+                    style={{
+                      fontSize: "1.25rem",
+                      padding: "12px 20px",
+                      backgroundColor: activeMainTab === tab.value ? "#004aad" : "transparent",
+                      color: activeMainTab === tab.value ? "#fff" : "#333",
+                      borderRadius: "6px",
+                      border: "none",
+                      cursor: "pointer",
+                    }}
                   >
+                    {tab.icon}
                     {tab.label}
                   </button>
 
-                  {/* Mostrar submenu solo si estás en Contenido */}
                   {tab.value === "contenido" && activeMainTab === "contenido" && (
-                    <ul className="nav flex-column ps-3">
+                    <ul className="nav flex-column ps-4 mt-2" style={{ gap: "6px" }}>
                       {contenidoTabs.map((subtab) => (
                         <li key={subtab.value} className="nav-item">
                           <button
-                            className={`nav-link text-start ${
-                              activeContenidoTab === subtab.value ? "active" : ""
-                            }`}
+                            className={`nav-link d-flex align-items-center gap-2 text-start ${activeContenidoTab === subtab.value ? "active" : ""}`}
                             onClick={() => {
                               setActiveContenidoTab(subtab.value);
                               setShowSidebar(false);
                             }}
+                            style={{
+                              fontSize: "1.1rem",
+                              padding: "10px 20px",
+                              backgroundColor: activeContenidoTab === subtab.value ? "#007bff" : "transparent",
+                              color: activeContenidoTab === subtab.value ? "#fff" : "#555",
+                              borderRadius: "6px",
+                              border: "none",
+                              cursor: "pointer",
+                            }}
                           >
+                            {subtab.icon}
                             {subtab.label}
                           </button>
                         </li>
