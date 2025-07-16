@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": ".",              // permite rutas relativas desde el proyecto raíz
+    "paths": {
+      "@/*": ["DO/src/*"]           // alias "@" apuntando a la carpeta src
+    },
+     },
+  
+}
