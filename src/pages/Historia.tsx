@@ -3,7 +3,7 @@ import { Card, CardContent } from "../componentes/ui/card";
 
 export default function Historia() {
   return (
-    <Card className="shadow-md rounded-xl border border-gray-200 bg-white">
+    <Card className="contenido-principal">
       <CardContent className="p-6 space-y-6">
         <h2 className="text-2xl font-bold text-blue-700">Historia del Desarrollo Organizacional</h2>
 
@@ -38,12 +38,12 @@ export default function Historia() {
           <img
             src="/imagenes/historia1.png"
             alt="Orígenes del desarrollo organizacional"
-            className="w-full max-w-xs rounded shadow"
+            className="img-uniforme"
           />
           <img
             src="/imagenes/historia2.jpg"
             alt="Evolución del desarrollo organizacional"
-            className="w-full max-w-xs rounded shadow"
+            className="img-uniforme"
           />
         </div>
       </CardContent>

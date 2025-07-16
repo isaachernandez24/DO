@@ -3,7 +3,7 @@ import { Card, CardContent } from "../componentes/ui/card";
 
 export default function Fases() {
   return (
-    <Card className="shadow-md rounded-xl border border-gray-200 bg-white">
+    <Card className="contenido-principal">
       <CardContent className="p-6 space-y-6">
         <h2 className="text-2xl font-bold text-blue-700">Fases del Desarrollo Organizacional</h2>
 
@@ -24,12 +24,12 @@ export default function Fases() {
           <img
             src="/imagenes/fase1.jpg"
             alt="Diagnóstico organizacional"
-            className="w-full max-w-xs rounded shadow"
+            className="img-uniforme"
           />
           <img
             src="/imagenes/fase2.jpg"
             alt="Implementación del cambio"
-            className="w-full max-w-xs rounded shadow"
+            className="img-uniforme"
           />
         </div>
       </CardContent>

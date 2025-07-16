@@ -34,12 +34,12 @@ export default function Introduccion() {
           <img
             src="/imagenes/imagen1.jpg"
             alt="Ilustración del Desarrollo Organizacional"
-            className="w-full max-w-xs rounded shadow"
+            className="img-uniforme"
           />
           <img
             src="/imagenes/imagen2.jpg"
             alt="Proceso de cambio organizacional"
-            className="w-full max-w-xs rounded shadow"
+            className="img-uniforme"
           />
         </div>
 

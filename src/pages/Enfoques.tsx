@@ -3,7 +3,7 @@ import { Card, CardContent } from "../componentes/ui/card";
 
 export default function Enfoques() {
   return (
-    <Card className="shadow-md rounded-xl border border-gray-200 bg-white">
+    <Card className="contenido-principal">
       <CardContent className="p-6 space-y-6">
         <h2 className="text-2xl font-bold text-blue-700">Enfoques Clásicos del Desarrollo Organizacional</h2>
 
@@ -24,14 +24,14 @@ export default function Enfoques() {
         {/* Espacio para imágenes */}
         <div className="flex flex-wrap gap-4 justify-center pt-4">
           <img
-            src="/imagenes/enfoque1.jpg"
+            src="/imagenes/enfoque1.png"
             alt="Sistema organizacional abierto"
-            className="w-full max-w-xs rounded shadow"
+            className="img-uniforme"
           />
           <img
             src="/imagenes/enfoque2.jpg"
             alt="Interacción humano-tecnología"
-            className="w-full max-w-xs rounded shadow"
+            className="img-uniforme"
           />
         </div>
       </CardContent>

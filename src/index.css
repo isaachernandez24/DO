@@ -6,7 +6,92 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   margin: 10px 180px; /* separación horizontal entre imágenes */
 }
+/* Contenedor principal para mejorar legibilidad */
+.contenido-principal {
+  max-width: 9000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+}
 
+/* Títulos principales */
+.contenido-principal h2 {
+  font-size: 2rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  color: #2563eb; /* blue-700 */
+  margin-bottom: 1rem;
+}
+
+/* Subtítulos */
+.contenido-principal h3 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #2563eb; /* blue-600 */
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Párrafos */
+.contenido-principal p {
+  font-size: 1.125rem; /* text-lg */
+  color: #374151; /* gray-700 */
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Listas */
+.contenido-principal ul {
+  list-style-type: disc;
+  padding-left: 2rem; /* pl-8 */
+  margin-bottom: 1rem;
+}
+
+.contenido-principal ul li {
+  margin-bottom: 0.5rem; /* space-y-2 */
+  font-size: 1.125rem; /* text-lg */
+  color: #374151; /* gray-700 */
+}
+
+.contenedor-imagenes {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  gap: 1.5rem; /* espacio entre imágenes */
+}
+
+/* Botones estilo básico */
+button {
+  background-color: #2563eb; /* blue-700 */
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e40af; /* blue-800 */
+}
+
+/* Responsividad básica para imágenes en pantallas pequeñas */
+@media (max-width: 640px) {
+  .img-uniforme {
+    width: 100%;
+    height: auto;
+    margin: 0 0 1rem 0;
+  }
+
+  .contenedor-imagenes {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+}
 body {
   font-family: 'Segoe UI', sans-serif;
 }
