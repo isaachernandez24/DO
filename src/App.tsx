@@ -13,7 +13,7 @@ import Evaluacion from "./pages/subtemas/Evaluacion";
 import Metodologia from "./pages/subtemas/Metodologia";
 import Recursos from "./pages/subtemas/Recursos";
 import Contacto from "./pages/subtemas/contacto";
-
+import Footer from "./componentes/footer";
 // Íconos
 import {
   FaHome,
@@ -101,7 +101,7 @@ function App() {
 
       </Navbar>
 
-      <div className="d-flex bg-light min-vh-100">
+      <div className="d-flex flex-column bg-light min-vh-100">
         {/* Sidebar */}
         <div
           className={`offcanvas offcanvas-start ${showSidebar ? "show" : ""}`}
@@ -194,6 +194,7 @@ function App() {
         <main className="container-fluid mt-5 pt-5">
           <div className="bg-white p-4 rounded shadow-sm">{renderContent()}</div>
         </main>
+        <Footer />
       </div>
     </>
   );
