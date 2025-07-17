@@ -60,7 +60,7 @@ export default function Introduccion() {
         </section>
 
         <div className="mt-6 flex justify-center">
-          <Button>Ver Mapa Conceptual</Button>
+          
         </div>
       </CardContent>
     </Card>

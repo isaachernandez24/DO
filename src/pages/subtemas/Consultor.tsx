@@ -3,7 +3,7 @@ import { Card, CardContent } from "../../componentes/ui/card";
 
 export default function Consultor() {
   return (
-    <Card className="shadow-md rounded-xl border border-gray-200 bg-white">
+    <Card className="contenido-principal">
       <CardContent className="p-6 space-y-6">
         <h2 className="text-2xl font-bold text-blue-700 text-center">
           Consultor del Desarrollo Organizacional

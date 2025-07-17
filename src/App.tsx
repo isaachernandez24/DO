@@ -12,35 +12,46 @@ import Consultor from "./pages/subtemas/Consultor";
 import Evaluacion from "./pages/subtemas/Evaluacion";
 import Metodologia from "./pages/subtemas/Metodologia";
 import Recursos from "./pages/subtemas/Recursos";
+import Contacto from "./pages/subtemas/contacto";
 
+// Íconos
 import {
   FaHome,
   FaBookOpen,
+  FaVial,
+  FaLightbulb,
+  FaRegChartBar,
+  FaHistory,
+  FaProjectDiagram,
+  FaClipboardCheck,
+  FaStethoscope,
+  FaUserTie,
+  FaGraduationCap,
   FaToolbox,
   FaCogs,
   FaClipboardList,
-  FaLightbulb,
-  FaCogs as FaCogsSmall,
+  FaEnvelopeOpenText,
 } from "react-icons/fa";
 
 function App() {
   const contenidoTabs = [
     { value: "intro", label: "Introducción", icon: <FaLightbulb />, component: <Introduccion /> },
-    { value: "cambio", label: "Cambio Organizacional", icon: <FaCogsSmall />, component: <Organizacional /> },
-    { value: "fases", label: "Fases", icon: <FaCogsSmall />, component: <Fases /> },
-    { value: "historia", label: "Historia", icon: <FaCogsSmall />, component: <Historia /> },
-    { value: "enfoques", label: "Enfoques", icon: <FaCogsSmall />, component: <Enfoques /> },
-    { value: "estrategias", label: "Estrategias", icon: <FaCogsSmall />, component: <Estrategias /> },
-    { value: "diagnostico", label: "Diagnóstico", icon: <FaCogsSmall />, component: <Diagnostico /> },
-    { value: "consultor", label: "Consultor", icon: <FaCogsSmall />, component: <Consultor /> },
+    { value: "cambio", label: "Cambio Organizacional", icon: <FaVial />, component: <Organizacional /> },
+    { value: "fases", label: "Fases", icon: <FaRegChartBar />, component: <Fases /> },
+    { value: "historia", label: "Historia", icon: <FaHistory />, component: <Historia /> },
+    { value: "enfoques", label: "Enfoques", icon: <FaProjectDiagram />, component: <Enfoques /> },
+    { value: "estrategias", label: "Estrategias", icon: <FaClipboardCheck />, component: <Estrategias /> },
+    { value: "diagnostico", label: "Diagnóstico", icon: <FaStethoscope />, component: <Diagnostico /> },
+    { value: "consultor", label: "Consultor", icon: <FaUserTie />, component: <Consultor /> },
   ];
 
   const mainTabs = [
     { value: "inicio", label: "Inicio", icon: <FaHome /> },
     { value: "contenido", label: "Contenido", icon: <FaBookOpen /> },
-    { value: "evaluacion", label: "Evaluación", icon: <FaToolbox /> },
-    { value: "metodologia", label: "Metodología", icon: <FaCogs /> },
+    { value: "evaluacion", label: "Evaluación", icon: <FaGraduationCap /> },
+    { value: "metodologia", label: "Metodología", icon: <FaToolbox /> },
     { value: "recursos", label: "Recursos", icon: <FaClipboardList /> },
+    { value: "contacto", label: "Contacto", icon: <FaEnvelopeOpenText /> },
   ];
 
   const [activeMainTab, setActiveMainTab] = useState("inicio");
@@ -48,41 +59,61 @@ function App() {
   const [showSidebar, setShowSidebar] = useState(false);
 
   const renderContent = () => {
-    if (activeMainTab === "inicio") return <Inicio />;
-    if (activeMainTab === "evaluacion") return <Evaluacion />;
-    if (activeMainTab === "metodologia") return <Metodologia />;
-    if (activeMainTab === "recursos") return <Recursos />;
-
-    if (activeMainTab === "contenido") {
-      const tab = contenidoTabs.find((t) => t.value === activeContenidoTab);
-      return tab ? tab.component : <div>Selecciona un tema</div>;
+    switch (activeMainTab) {
+      case "inicio":
+        return <Inicio />;
+      case "evaluacion":
+        return <Evaluacion />;
+      case "metodologia":
+        return <Metodologia />;
+      case "recursos":
+        return <Recursos />;
+      case "contacto":
+        return <Contacto />;
+      case "contenido":
+        const tab = contenidoTabs.find((t) => t.value === activeContenidoTab);
+        return tab ? tab.component : <div>Selecciona un tema</div>;
+      default:
+        return null;
     }
-
-    return null;
   };
 
   return (
     <>
       <Navbar>
         <button
-          className="btn btn-primary"
-          type="button"
-          onClick={() => setShowSidebar(true)}
-          aria-controls="sidebarOffcanvas"
-          aria-expanded={showSidebar}
-        >
-          ☰ Menú
-        </button>
+  className="btn btn-outline-primary d-flex align-items-center justify-content-center"
+  type="button"
+  onClick={() => setShowSidebar(true)}
+  aria-controls="sidebarOffcanvas"
+  aria-expanded={showSidebar}
+  style={{
+    fontSize: "1.5rem",
+    padding: "10px 20px",
+    borderRadius: "8px",
+    border: "2px solid #004aad",
+    backgroundColor: "white",
+    color: "#004aad",
+  }}
+>
+  ☰ 
+</button>
+
       </Navbar>
 
       <div className="d-flex bg-light min-vh-100">
-        {/* Sidebar Offcanvas */}
+        {/* Sidebar */}
         <div
           className={`offcanvas offcanvas-start ${showSidebar ? "show" : ""}`}
           tabIndex={-1}
           id="sidebarOffcanvas"
           aria-labelledby="sidebarOffcanvasLabel"
-          style={{ visibility: showSidebar ? "visible" : "hidden", backgroundColor: "#e0f0ff", width: "280px", borderRight: "1px solid #c0d4f7" }}
+          style={{
+            visibility: showSidebar ? "visible" : "hidden",
+            backgroundColor: "#e0f0ff",
+            width: "280px",
+            borderRight: "1px solid #c0d4f7",
+          }}
         >
           <div className="offcanvas-header" style={{ borderBottom: "1px solid #c0d4f7", paddingBottom: "0.5rem" }}>
             <h5 className="offcanvas-title" id="sidebarOffcanvasLabel">
@@ -100,7 +131,9 @@ function App() {
               {mainTabs.map((tab) => (
                 <li className="nav-item" key={tab.value}>
                   <button
-                    className={`nav-link d-flex align-items-center gap-2 text-start ${activeMainTab === tab.value ? "active" : ""}`}
+                    className={`nav-link d-flex align-items-center gap-2 text-start ${
+                      activeMainTab === tab.value ? "active" : ""
+                    }`}
                     onClick={() => {
                       setActiveMainTab(tab.value);
                       setShowSidebar(false);
@@ -127,7 +160,9 @@ function App() {
                       {contenidoTabs.map((subtab) => (
                         <li key={subtab.value} className="nav-item">
                           <button
-                            className={`nav-link d-flex align-items-center gap-2 text-start ${activeContenidoTab === subtab.value ? "active" : ""}`}
+                            className={`nav-link d-flex align-items-center gap-2 text-start ${
+                              activeContenidoTab === subtab.value ? "active" : ""
+                            }`}
                             onClick={() => {
                               setActiveContenidoTab(subtab.value);
                               setShowSidebar(false);
