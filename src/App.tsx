@@ -12,7 +12,7 @@ import Consultor from "./pages/subtemas/Consultor";
 import Evaluacion from "./pages/subtemas/Evaluacion";
 import Metodologia from "./pages/subtemas/Metodologia";
 import Recursos from "./pages/subtemas/Recursos";
-import Contacto from "./pages/subtemas/contacto";
+import Contacto from "./pages/subtemas/Contacto";
 import Footer from "./componentes/footer";
 // Íconos
 import {
